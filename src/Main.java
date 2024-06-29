@@ -46,6 +46,14 @@ public class Main {
         System.out.println("Задание 11:");
         arrayFill();
         System.out.println();
+
+        System.out.println("Задание 12:");
+        lessSixMultiplyTwo();
+        System.out.println();
+
+        System.out.println("Задание 13:");
+        matrix();
+        System.out.println();
     }
 
     // Задание 1
@@ -164,5 +172,30 @@ public class Main {
             arr[i] = i + 1;
         }
         System.out.println(Arrays.toString(arr));
+    }
+
+    // Задание 12
+    public static void lessSixMultiplyTwo() {
+        int[] arr = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 6) {
+                arr[i] *= 2;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    // Задание 13
+    public static void matrix() {
+        int[][] arr = new int[5][5];
+        int a = arr[0].length;
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < a; j++) {
+                if (i == j || j == a - i - 1) {
+                    arr[i][j] = 1;
+                }
+            }
+            System.out.println(Arrays.toString(arr[i]));
+        }
     }
 }
