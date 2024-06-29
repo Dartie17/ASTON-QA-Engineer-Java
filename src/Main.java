@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -28,6 +29,23 @@ public class Main {
 
         System.out.println("Задание 7:");
         positiveOrNegativeV2();
+        System.out.println();
+
+        System.out.println("Задание 8:");
+        repeatString();
+        System.out.println();
+
+        System.out.println("Задание 9:");
+        isLeapYear();
+        System.out.println();
+
+        System.out.println("Задание 10:");
+        arrayChange();
+        System.out.println();
+
+        System.out.println("Задание 11:");
+        arrayFill();
+        System.out.println();
     }
 
     // Задание 1
@@ -103,5 +121,48 @@ public class Main {
         int a = scan.nextInt();
         boolean b = a < 0;
         System.out.println(b);
+    }
+
+    // Задание 8
+    public static void repeatString() {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Введите строку: ");
+        String a = scan.next();
+        System.out.print("Введите целое число: ");
+        int b = scan.nextInt();
+        for (int i = 1; i <= b; i++) {
+            System.out.println(a);
+        }
+    }
+
+    // Задание 9
+    public static void isLeapYear() {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Введите год: ");
+        int a = scan.nextInt();
+        boolean b = (a % 4 == 0 && a % 100 != 0) || a % 400 == 0;
+        System.out.println(b);
+    }
+
+    // Задание 10
+    public static void arrayChange() {
+        int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                arr[i] = 1;
+            } else {
+                arr[i] = 0;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    // Задание 11
+    public static void arrayFill() {
+        int[] arr = new int[100];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i + 1;
+        }
+        System.out.println(Arrays.toString(arr));
     }
 }
