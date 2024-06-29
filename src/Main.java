@@ -54,6 +54,10 @@ public class Main {
         System.out.println("Задание 13:");
         matrix();
         System.out.println();
+
+        System.out.println("Задание 13:");
+        integerArray();
+        System.out.println();
     }
 
     // Задание 1
@@ -197,5 +201,19 @@ public class Main {
             }
             System.out.println(Arrays.toString(arr[i]));
         }
+    }
+
+    // Задание 14
+    public static void integerArray() {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Укажите длину массива: ");
+        int len = scan.nextInt();
+        System.out.print("Укажите чисовое значение ячейки массива: ");
+        int initialValue = scan.nextInt();
+        int[] arr = new int[len];
+        for (int i = 0; i < len; i++) {
+            arr[i] = initialValue;
+        }
+        System.out.println(Arrays.toString(arr));
     }
 }
