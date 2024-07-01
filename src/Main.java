@@ -208,7 +208,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.print("Укажите длину массива: ");
         int len = scan.nextInt();
-        System.out.print("Укажите чисовое значение ячейки массива: ");
+        System.out.print("Укажите числовое значение ячейки массива: ");
         int initialValue = scan.nextInt();
         int[] arr = new int[len];
         for (int i = 0; i < len; i++) {
