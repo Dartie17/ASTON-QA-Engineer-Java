@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
         System.out.println("Задание 1:");
         printThreeWords();
         System.out.println();
@@ -20,23 +22,33 @@ public class Main {
         System.out.println();
 
         System.out.println("Задание 5:");
-        from10To20();
+        System.out.println(isFrom10To20());
         System.out.println();
 
         System.out.println("Задание 6:");
-        positiveOrNegativeV1();
+        System.out.print("Введите целое число: ");
+        int num6 = scan.nextInt();
+        positiveOrNegative(num6);
         System.out.println();
 
         System.out.println("Задание 7:");
-        positiveOrNegativeV2();
+        System.out.print("Введите целое число: ");
+        int num7 = scan.nextInt();
+        System.out.println(isNegative(num7));
         System.out.println();
 
         System.out.println("Задание 8:");
-        repeatString();
+        System.out.print("Введите строку: ");
+        String str8 = scan.next();
+        System.out.print("Введите целое число: ");
+        int num8 = scan.nextInt();
+        repeatString(str8, num8);
         System.out.println();
 
         System.out.println("Задание 9:");
-        isLeapYear();
+        System.out.print("Введите год: ");
+        int num9 = scan.nextInt();
+        System.out.println(isLeapYear(num9));
         System.out.println();
 
         System.out.println("Задание 10:");
@@ -55,24 +67,25 @@ public class Main {
         matrix();
         System.out.println();
 
-        System.out.println("Задание 13:");
-        integerArray();
+        System.out.println("Задание 14:");
+        System.out.print("Укажите длину массива: ");
+        int num141 = scan.nextInt();
+        System.out.print("Укажите числовое значение ячейки массива: ");
+        int num142 = scan.nextInt();
+        integerArray(num141, num142);
         System.out.println();
     }
 
     // Задание 1
     public static void printThreeWords() {
-        System.out.println("Orange");
-        System.out.println("Banana");
-        System.out.println("Apple");
+        System.out.println("Orange\nBanana\nApple");
     }
 
     // Задание 2
     public static void checkSumSign() {
-        int a = 15;
-        int b = 28;
-        int sum = a + b;
-        if (sum >= 0) {
+        int a = 9;
+        int b = -3;
+        if (a + b >= 0) {
             System.out.println("Сумма положительная");
         } else {
             System.out.println("Сумма отрицательная");
@@ -103,23 +116,16 @@ public class Main {
     }
 
     // Задание 5
-    public static void from10To20() {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Введите первое целое число: ");
-        int a = scan.nextInt();
-        System.out.print("Введите второе целое число: ");
-        int b = scan.nextInt();
+    public static boolean isFrom10To20() {
+        int a = 3;
+        int b = 7;
         int sum = a + b;
-        boolean c = 10 <= sum && sum <= 20;
-        System.out.println(c);
+        return (10 <= sum && sum <= 20);
     }
 
     // Задание 6
-    public static void positiveOrNegativeV1() {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Введите целое число: ");
-        int a = scan.nextInt();
-        if (a >= 0) {
+    public static void positiveOrNegative(int num) {
+        if (num >= 0) {
             System.out.println("Положительное");
         } else {
             System.out.println("Отрицательное");
@@ -127,33 +133,20 @@ public class Main {
     }
 
     // Задание 7
-    public static void positiveOrNegativeV2() {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Введите целое число: ");
-        int a = scan.nextInt();
-        boolean b = a < 0;
-        System.out.println(b);
+    public static boolean isNegative(int num) {
+        return (num < 0);
     }
 
     // Задание 8
-    public static void repeatString() {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Введите строку: ");
-        String a = scan.next();
-        System.out.print("Введите целое число: ");
-        int b = scan.nextInt();
-        for (int i = 1; i <= b; i++) {
-            System.out.println(a);
+    public static void repeatString(String text, int count) {
+        for (int i = 1; i <= count; i++) {
+            System.out.println(text);
         }
     }
 
     // Задание 9
-    public static void isLeapYear() {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Введите год: ");
-        int a = scan.nextInt();
-        boolean b = (a % 4 == 0 && a % 100 != 0) || a % 400 == 0;
-        System.out.println(b);
+    public static boolean isLeapYear(int year) {
+        return ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0);
     }
 
     // Задание 10
@@ -204,12 +197,7 @@ public class Main {
     }
 
     // Задание 14
-    public static void integerArray() {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Укажите длину массива: ");
-        int len = scan.nextInt();
-        System.out.print("Укажите числовое значение ячейки массива: ");
-        int initialValue = scan.nextInt();
+    public static void integerArray(int len, int initialValue) {
         int[] arr = new int[len];
         for (int i = 0; i < len; i++) {
             arr[i] = initialValue;
