@@ -9,9 +9,12 @@ public class Main {
         empArray[3] = new Employee("Petrov Petr Petrovich", "Manager", "petrov_pp@test.ru", "8(916)325-42-17", 210_000, 38);
         empArray[4] = new Employee("Sidorov Sidor Sidorovich", "HR", "sidorov_ss@test.ru", "8(926)032-28-97", 165_000, 31);
 
-        for (var employee : empArray) {
-            employee.showInfo();
-            System.out.println();
-        }
+//        for (var employee : empArray) {
+//            employee.showInfo();
+//            System.out.println();
+//        }
+
+//        Park.Attraction attraction = new Park.Attraction("Slime", "10:00 - 18:00", 90);
+//        attraction.showInfo();
     }
 }
