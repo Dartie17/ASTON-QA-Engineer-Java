@@ -13,26 +13,30 @@ public class Animal {
         System.out.println("Животное: " + name);
     }
 
-    public void run(int dist) {
+    private void run(int dist) {
         System.out.println(name + " пробежал " + dist + " м");
     }
 
-    public void swim(int dist) {
+    private void swim(int dist) {
         System.out.println(name + " проплыл " + dist + " м");
     }
 
 
     // Наследуемый класс "Cat"
     public class Cat extends Animal {
-        String color;
 
-        public Cat(String name, String color) {
+        public Cat(String name) {
             this.name = name;
-            this.color = color;
         }
 
         public void catInfo() {
-            System.out.println("Name: " + name + "\nColor: " + color);
+            System.out.println("Name: " + name);
+        }
+
+        public void run(int distance) {
+            if (0 < distance && distance <= 150) {
+                System.out.println(name + " пробежал " + distance + " м");
+            }
         }
 
 
